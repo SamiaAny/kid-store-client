@@ -3,9 +3,11 @@ import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { useParams } from 'react-router';
-import Navmenu from '../shared/Navmenu/Navmenu';
+// import Navmenu from '../shared/Navmenu/Navmenu';
 import useAuth from '../../hooks/useAuth';
 import './PlaceOrder.css';
+import Header from '../shared/Header/Header';
+import Footer from '../shared/Footer/Footer';
 
 const PlaceOrder = () => {
     const { productId } = useParams();
@@ -19,14 +21,14 @@ const PlaceOrder = () => {
     });
 
     useEffect(() => {
-        const url = `http://localhost:5000/allproduct/${productId}`;
+        const url = `https://nameless-basin-78356.herokuapp.com/allproduct/${productId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 setSingleProduct(data);
             })
-    }, []);
+    }, [productId]);
 
     //for default values setting
     useEffect(() => {
@@ -42,7 +44,7 @@ const PlaceOrder = () => {
     const onSubmit = data => {
         data.status = "pending";
         console.log(data);
-        fetch('http://localhost:5000/orders', {
+        fetch('https://nameless-basin-78356.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -59,19 +61,19 @@ const PlaceOrder = () => {
     }
     return (
         <div>
-            <Navmenu></Navmenu>
+            <Header></Header>
             <>
                 <Box component="div">
                     <Container>
                         <Grid container spacing={2} sx={{ mt: 4 }}>
                             <Grid item xs={12} sm={12} md={6}>
-                                <Card sx={{ minWidth: 275, textAlign: 'left', boxShadow: 0 }}>
+                                <Card sx={{ minWidth: 275, textAlign: 'left', boxShadow: 0, mt:2 }}>
                                     <CardMedia
                                         component="img"
                                         height="250"
-                                        style={{ width: '100%' }}
+                                        style={{ width: '100%', objectFit:'cover' }}
                                         image={singleProduct?.img}
-                                        alt="green iguana"
+                                        alt=""
                                     />
                                     <CardContent>
                                         <Typography variant="h5" component="div">
@@ -80,8 +82,13 @@ const PlaceOrder = () => {
                                         <Typography variant="body2">
                                             {singleProduct?.description}
                                         </Typography>
+                                        {singleProduct?.category && 
+                                            <Typography variant="body2">
+                                              Category:{singleProduct?.category}
+                                        </Typography>
+                                        }
                                         <Typography variant="h5" component="div">
-                                            ${singleProduct?.price}
+                                           Price: ${singleProduct?.price}
                                         </Typography>
                                     </CardContent>
                                 </Card>
@@ -107,13 +114,14 @@ const PlaceOrder = () => {
                                     <input placeholder="Address" {...register("address", { required: true })} /><br/>
 
                                     {/* <input type="submit" /> */}
-                                    <Button type="submit" sx={{m:2}} variant="contained">Place Order</Button>
+                                    <Button type="submit" sx={{m:2}} color="secondary" variant="outlined">Place Order</Button>
                                 </form>
                             </Grid>
                         </Grid>
                     </Container>
                 </Box>
             </>
+            <Footer></Footer>
         </div>
     );
 };

@@ -9,7 +9,7 @@ const AddReview = () => {
 
     const onSubmit = data => {
         console.log(data);
-        fetch('http://localhost:5000/review',{
+        fetch('https://nameless-basin-78356.herokuapp.com/review',{
             method: 'POST',
             headers: {
                 'content-type':'application/json'
@@ -38,12 +38,12 @@ const AddReview = () => {
                 
                 <textarea placeholder="Add your review here..." {...register("comment", { required: true })} /><br />
 
-                <label>Give rating (between 1 & 5): </label>
-                <input id="rating" type="number" {...register("ratings", { required: true })} min="1" max="5"/><br />
+                <label>Give rating (between 0 & 5): </label>
+                <input id="rating" type="number" {...register("ratings", { required: true })} min="0" max="5"/><br />
                 {errors.exampleRequired && <span>This field is required</span>}
 
                 {/* <input type="submit" /> */}
-                <Button type="submit" sx={{ m: 2 }} variant="contained">Submit your review</Button>
+                <Button type="submit" sx={{ m: 2 }} color="secondary" variant="outlined">Submit your review</Button>
             </form>
         </div>
     );

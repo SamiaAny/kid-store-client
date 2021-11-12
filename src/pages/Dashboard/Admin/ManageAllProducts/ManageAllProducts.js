@@ -9,10 +9,10 @@ import ManageProduct from '../ManageProduct/ManageProduct';
 const ManageAllProducts = () => {
     const [allProducts, setAllPorducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/allproduct')
+        fetch('https://nameless-basin-78356.herokuapp.com/allproduct')
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 setAllPorducts(data);
             });
     }, [allProducts])

@@ -1,19 +1,13 @@
 import React from 'react';
-import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import InputBase from '@mui/material/InputBase';
-import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { Link, NavLink } from 'react-router-dom';
 import { Button } from '@mui/material';
@@ -88,23 +82,20 @@ const Header = () => {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-            <MenuItem>
-                <Link to="/home">Home</Link>
-            </MenuItem>
-            <MenuItem>
-                <Link to="/product">Explore Product</Link>
-            </MenuItem>
+            <NavLink style={{textDecoration:'none', color: 'grey'}} to="/home"><MenuItem>Home</MenuItem></NavLink>
+            <NavLink style={{textDecoration:'none', color: 'grey'}} to="/product"><MenuItem>Explore Product</MenuItem></NavLink>
+            <NavLink style={{textDecoration:'none', color: 'grey'}} to="/contact"><MenuItem>Contact Us</MenuItem></NavLink>
             {user?.email ?
-                <>
-                    <MenuItem><Link to="/dashboard">Dashboard</Link></MenuItem>
+                <Box>
+                    <NavLink style={{textDecoration:'none', color: 'grey'}} to="/dashboard"><MenuItem>Dashboard</MenuItem></NavLink>
                     <MenuItem>
                         <AccountCircle />
                         {user?.displayName}
                     </MenuItem>
-                    <MenuItem><Button color="inherit">Logout</Button></MenuItem>
-                </>
+                    <MenuItem><Button onClick={logOut} color="inherit">Logout</Button></MenuItem>
+                </Box>
                 :
-                <MenuItem><Link to="/login"><Button color="inherit">Login</Button></Link></MenuItem>
+                <NavLink style={{textDecoration:'none', color: 'grey'}}  to="/login"><MenuItem><Button color="secondary">Login</Button></MenuItem></NavLink>
             }
         </Menu>
     );
@@ -113,7 +104,7 @@ const Header = () => {
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" sx={{backgroundColor:'purple'}}>
                 <Toolbar>
-                    <IconButton
+                    {/* <IconButton
                         size="large"
                         edge="start"
                         color="inherit"
@@ -121,12 +112,13 @@ const Header = () => {
                         sx={{ mr: 2 }}
                     >
                         <MenuIcon />
-                    </IconButton>
+                    </IconButton> */}
                     <Typography
                         variant="h6"
                         noWrap
                         component="div"
-                        sx={{ display: { xs: 'none', sm: 'block' } }}
+                        sx={{ml:4}}
+                        // sx={{ display: { xs: 'none', sm: 'block' } }}
                     >
                         Kid Store
                     </Typography>
@@ -135,7 +127,7 @@ const Header = () => {
 
                         <NavLink style={{ textDecoration: 'none', color: 'white', marginRight: '20px', marginTop: '4px' }} to="/home">Home</NavLink>
                         <NavLink style={{ textDecoration: 'none', color: 'white', marginRight: '20px', marginTop: '4px' }} to="/product">Explore Product</NavLink>
-                        <NavLink style={{ textDecoration: 'none', color: 'white', marginRight: '20px', marginTop: '4px' }} to="/review">Reviews</NavLink>
+                        <NavLink style={{ textDecoration: 'none', color: 'white', marginRight: '20px', marginTop: '4px' }} to="/contact">Contact Us</NavLink>
 
                         {user?.email ?
                             <>
@@ -148,7 +140,7 @@ const Header = () => {
                                 <Button style={menubar} onClick={logOut} color="inherit">Logout</Button>
                             </>
                             :
-                            <Link to="/login"><Button style={{ color: 'white', marginRight: '20px' }} color="inherit">Login</Button></Link>
+                            <NavLink style={{textDecoration:'none'}} to="/login"><Button style={{ color: 'white', marginRight: '20px' }} color="inherit">Login</Button></NavLink>
                         }
 
                     </Box>
@@ -161,7 +153,8 @@ const Header = () => {
                             onClick={handleMobileMenuOpen}
                             color="inherit"
                         >
-                            <MoreIcon />
+                            {/* <MoreIcon /> */}
+                            <MenuIcon />
                         </IconButton>
                     </Box>
                 </Toolbar>

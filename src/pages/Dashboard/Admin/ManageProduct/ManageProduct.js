@@ -6,14 +6,14 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom';
 
 const ManageProduct = (props) => {
     const { allProducts, setAllProducts} = props;
     const { prodctName, price, description, img, _id } = props.singleproduct;
 
+    //product delete process
     const handleDeleteProduct = id => {
-        const url = `http://localhost:5000/allproduct/${id}`;
+        const url = `https://nameless-basin-78356.herokuapp.com/allproduct/${id}`;
         fetch(url,{
             method: 'DELETE'
         }).then(res => res.json())
@@ -31,7 +31,7 @@ const ManageProduct = (props) => {
     }
     return (
         <Grid item xs={4} sm={4} md={4} >
-            <Card sx={{ minWidth: 275, textAlign: 'left' }}>
+            <Card sx={{ minWidth: 275, textAlign: 'left', height: 1 }}>
                 <CardContent>
                     <CardMedia
                         component="img"
@@ -50,7 +50,7 @@ const ManageProduct = (props) => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button onClick={()=>handleDeleteProduct(_id)} sx={{ m: 2 }} variant="contained">delete</Button>
+                    <Button onClick={()=>handleDeleteProduct(_id)} sx={{ m: 2 }} color="secondary" variant="outlined">delete</Button>
                 </CardActions>
             </Card>
         </Grid>

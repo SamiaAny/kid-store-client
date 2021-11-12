@@ -20,7 +20,7 @@ const useFirebase = () => {
                 console.log(userCredential.user);
                 const newUser = {displayName: name,email: email}
                 setUser(newUser);
-
+                setError('');
                 saveUserToDb(name,email);
                 updateProfile(auth.currentUser, {
                     displayName: name
@@ -34,6 +34,7 @@ const useFirebase = () => {
             })
             .catch((error) => {
                 console.log(error.message);
+                setError(error.message);
             })
             .finally(() => setIsLoading(false))
     };
@@ -46,12 +47,14 @@ const useFirebase = () => {
             .then((userCredential) => {
                 // Signed in 
                 console.log(userCredential.user);
+                setError('');
                 const uri = location?.state?.from || '/';
                 history.push(uri);
                 // ...
             })
             .catch((error) => {
                 console.log(error.message);
+                setError(error.message);
             })
             .finally(() => setIsLoading(false))
     };
@@ -70,10 +73,19 @@ const useFirebase = () => {
         return () => unsubsceibed;
     }, []);
 
+    useEffect(()=>{
+        fetch(`https://nameless-basin-78356.herokuapp.com/users/${user?.email}`)
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data);
+            setAdmin(data.admin);
+        })
+    },[user?.email]);
+
     //save user to db
     const saveUserToDb = (displayName,email) => {
         const user = {displayName, email};
-        fetch('http://localhost:5000/users/',{
+        fetch('https://nameless-basin-78356.herokuapp.com/users/',{
             method:'POST',
             headers: {
                 'content-type':'application/json'
@@ -83,16 +95,7 @@ const useFirebase = () => {
     }
 
 
-    useEffect(()=>{
-        fetch(`http://localhost:5000/users/${user?.email}`)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            setAdmin(data?.admin);
-        }).catch(error => {
-            setError(error.message);
-        })
-    },[user?.email])
+
     //logout
     const logOut = () => {
         setIsLoading(true);
@@ -106,6 +109,7 @@ const useFirebase = () => {
 
     return {
         user,
+        error,
         isLoading,
         admin,
         registerUser,

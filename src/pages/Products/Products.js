@@ -1,64 +1,29 @@
 import React, {useState,useEffect} from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import { Container, Typography } from '@mui/material';
+import { Container, Typography, CircularProgress } from '@mui/material';
 import Product from '../Product/Product';
-
-
-
-// const products = [
-//     {
-//         prodctName: "Funscool Teddy",
-//         price: 100,
-//         description: "lorem ipose hgjghguh uyuiyuiy uyuyiy",
-//         img: puzzle
-//     },
-//     {
-//         prodctName: "Baby Play Sets",
-//         price: 100,
-//         description: "lorem ipose hgjghguh uyuiyuiy uyuyiy",
-//         img: puzzle
-//     },
-//     {
-//         prodctName: "Toys Box fro Babys",
-//         price: 100,
-//         description: "lorem ipose hgjghguh uyuiyuiy uyuyiy",
-//         img: puzzle
-//     },
-//     {
-//         prodctName: "Toys Zip Car",
-//         price: 100,
-//         description: "lorem ipose hgjghguh uyuiyuiy uyuyiy",
-//         img: puzzle
-//     },
-//     {
-//         prodctName: "Mini Teddy",
-//         price: 100,
-//         description: "lorem ipose hgjghguh uyuiyuiy uyuyiy",
-//         img: puzzle
-//     },
-//     {
-//         prodctName: "Puzzle Box",
-//         price: 100,
-//         description: "lorem ipose hgjghguh uyuiyuiy uyuyiy",
-//         img: puzzle
-//     }
-// ]
 
 
 const Products = () => {
     const [allProducts,setAllPorducts] = useState([]);
+    const [loading,setLoading] = useState(null);
+
     useEffect(()=>{
-        fetch('http://localhost:5000/allproduct')
+        setLoading(true);
+        fetch('https://nameless-basin-78356.herokuapp.com/allproduct')
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 setAllPorducts(data);
+                setLoading(false);
             });
-    },[])
+    },[]);
+    
     return (
         <div>
             <Container>
+            {loading && <CircularProgress />}
             <Typography variant="h3" sx={{fontWeight: 400, my:4}} component="div">
                 Products
             </Typography>

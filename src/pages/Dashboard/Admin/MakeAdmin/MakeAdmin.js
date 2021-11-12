@@ -6,7 +6,7 @@ const MakeAdmin = () => {
     const { register, handleSubmit,reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data);
-        fetch('http://localhost:5000/users/admin',{
+        fetch('https://nameless-basin-78356.herokuapp.com/users/admin',{
             method: 'PUT',
             headers: {
                 'content-type':'application/json'
@@ -29,7 +29,7 @@ const MakeAdmin = () => {
             <form onSubmit={handleSubmit(onSubmit)} className='review-form'>
                 <input placeholder="email" style={{padding:'5px',width:'50%'}} type="email" {...register("email", { required: true })} /><br/>
                 {errors.exampleRequired && <span>This field is required</span>}
-                <Button type="submit" sx={{ }} variant="contained">make admin</Button>
+                <Button type="submit" color="secondary" variant="outlined">make admin</Button>
             </form>
         </div>
     );

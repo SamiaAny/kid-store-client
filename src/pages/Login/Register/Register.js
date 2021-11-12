@@ -1,4 +1,4 @@
-import { Container, Grid, TextField, Button,Typography,Box } from '@mui/material';
+import { Container, Grid, TextField, Button,Typography,Box, Alert } from '@mui/material';
 import React, { useState } from 'react';
 import { NavLink,useHistory } from 'react-router-dom';
 import login from '../../../images/undraw_Login_re_4vu2.png';
@@ -6,9 +6,11 @@ import login from '../../../images/undraw_Login_re_4vu2.png';
 import useAuth from '../../../hooks/useAuth';
 
 const Register = () => {
-    const [registerData,setRegisterData] = useState({});
-    const { registerUser } = useAuth();
+    const [registerData, setRegisterData] = useState({});
+    const { user, error, registerUser } = useAuth();
     const history = useHistory();
+
+
     const handleOnBlur = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -18,6 +20,7 @@ const Register = () => {
         setRegisterData(newData)
     }
 
+    //user registration
     const handleOnRegister = e => {
         e.preventDefault();
         console.log(registerData);
@@ -39,6 +42,11 @@ const Register = () => {
                             <TextField sx={{ width: '75%', m: 1 }} name="password" type="password" label="password" variant="standard" onBlur={handleOnBlur} />
                             <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Register</Button>
                         </form>
+
+                        {user?.email && <Alert severity="success">User Created successfully!</Alert>}
+                        {error && <Alert severity="error">{error}</Alert>}
+
+
                         <NavLink to="/login">Already have an account? login</NavLink><br/>
                         <NavLink to="/">Back to home</NavLink>
                         </Box>

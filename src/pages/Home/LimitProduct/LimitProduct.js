@@ -7,10 +7,10 @@ import Product from '../../Product/Product';
 const LimitProduct = () => {
     const [products,setPorducts] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/allproduct')
+        fetch('https://nameless-basin-78356.herokuapp.com/allproduct')
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 setPorducts(data);
             });
     },[]);

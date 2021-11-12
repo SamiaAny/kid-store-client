@@ -16,7 +16,7 @@ const ManageAllOrder = () => {
     const [control,setControl] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allorder')
+        fetch('https://nameless-basin-78356.herokuapp.com/allorder')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
@@ -25,7 +25,7 @@ const ManageAllOrder = () => {
     }, [control]);
 
     const handleUpdateOrder = id => {
-        const url = `http://localhost:5000/allorder/${id}`;
+        const url = `https://nameless-basin-78356.herokuapp.com/allorder/${id}`;
         fetch(url, {
             method:'PUT'
         }).then(res => res.json())
@@ -44,7 +44,7 @@ const ManageAllOrder = () => {
     const handleDeleteOrder = (id) => {
         const proceed = window.confirm('Are you sure to delete order?');
         if (proceed) {
-            fetch(`http://localhost:5000/allorder/${id}`, {
+            fetch(`https://nameless-basin-78356.herokuapp.com/allorder/${id}`, {
                 method: 'DELETE'
             }).then(res => res.json())
                 .then(data => {

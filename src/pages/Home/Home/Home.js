@@ -1,19 +1,22 @@
 import React from 'react';
 // import Products from '../../Products/Products';
-import Navmenu from '../../shared/Navmenu/Navmenu';
-import Banner from '../Banner/Banner';
 import Reviews from '../../Reviews/Reviews';
 import Footer from '../../shared/Footer/Footer';
 import LimitProduct from '../LimitProduct/LimitProduct';
 import Header from '../../shared/Header/Header';
+import About from '../About/About';
+import Contact from '../Contact/Contact';
+import TopBanner from '../../shared/TopBanner/TopBanner';
 
 const Home = () => {
     return (
         <div>
             {/* <Navmenu></Navmenu> */}
             <Header></Header>
-            <Banner></Banner>
+            <TopBanner></TopBanner>
+            <About></About>
             <LimitProduct></LimitProduct>
+            <Contact></Contact>
             <Reviews></Reviews>
             <Footer></Footer>
         </div>

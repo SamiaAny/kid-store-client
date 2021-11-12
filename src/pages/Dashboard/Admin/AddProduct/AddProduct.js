@@ -7,7 +7,7 @@ const AddProduct = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const onSubmit = (data) => {
         console.log(data);
-        fetch('http://localhost:5000/allproduct',{
+        fetch('https://nameless-basin-78356.herokuapp.com/allproduct',{
             method: 'POST',
             headers: {
                 'content-type':'application/json'
@@ -43,7 +43,7 @@ const AddProduct = () => {
                     {errors.img && <span>This field is required</span>}<br />
 
                     {/* <input type="submit" /> */}
-                    <Button type="submit" sx={{ m: 2 }} variant="contained">Add Product</Button>
+                    <Button type="submit" sx={{ m: 2 }} color="secondary" variant="contained">Add Product</Button>
                 </form>
             </Box>
         </div>

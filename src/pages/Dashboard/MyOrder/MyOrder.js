@@ -15,7 +15,7 @@ const MyOrder = () => {
     const [orderInfo, setorderInfo] = useState([]);
 
     useEffect(() => {
-        const url = `http://localhost:5000/allorder/${user?.email}`;
+        const url = `https://nameless-basin-78356.herokuapp.com/allorder/${user?.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -28,7 +28,7 @@ const MyOrder = () => {
     const handleDeleteOrder = (id) => {
         const proceed = window.confirm('Are you sure to delete order?');
         if (proceed) {
-            fetch(`http://localhost:5000/allorder/${id}`, {
+            fetch(`https://nameless-basin-78356.herokuapp.com/allorder/${id}`, {
                 method: 'DELETE'
             }).then(res => res.json())
                 .then(data => {
@@ -50,7 +50,7 @@ const MyOrder = () => {
                 My Order
             </Typography>
             <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                <Table sx={{ minWidth: 300 }} aria-label="simple table">
                     <TableHead>
                         <TableRow>
                             <TableCell>Name</TableCell>

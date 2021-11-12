@@ -2,43 +2,83 @@
     {
         "prodctName": "Funscool Teddy",
         "price": 100,
-        "description": "lorem ipose hgjghguh uyuiyuiy uyuyiy",
-		"img": "https://i.ibb.co/qj2gZs8/puzzlebox.jpg"
+        "category": "Baby's doll",
+        "description": "Indoor games for child,speciality is tiny doll",
+		"img": "https://i.ibb.co/JsVQYw3/pinkdoll.jpg"
     },
     {
         "prodctName": "Baby Play Sets",
-        "price": 100,
-        "description": "lorem ipose hgjghguh uyuiyuiy uyuyiy",
-		"img": "https://i.ibb.co/qj2gZs8/puzzlebox.jpg"
+        "price": 300,
+        "category": "Box set",
+        "description": "Learning game, this toy is being helped for learning swimming.",
+		"img": "https://i.ibb.co/z7C6gSd/toni-cuenca.jpg"
     },
     {
-        "prodctName": "Toys Box fro Babys",
-        "price": 100,
-        "description": "lorem ipose hgjghguh uyuiyuiy uyuyiy",
-		"img": "https://i.ibb.co/qj2gZs8/puzzlebox.jpg"
+        "prodctName": "Toys Box for Babys",
+        "price": 500,
+        "category": "Box set",
+        "description": "One kind of learning toys,specially for 3-4 years kids. Help for building mind of your kid",
+		"img": "https://i.ibb.co/SQLWNBv/toyimg4.jpg"
     },
     {
         "prodctName": "Toys Zip Car",
-        "price": 100,
-        "description": "lorem ipose hgjghguh uyuiyuiy uyuyiy",
-		"img": "https://i.ibb.co/qj2gZs8/puzzlebox.jpg"
+        "price": 150,
+        "category": "Castle toys",
+        "description": "Bruder toys mini vehicle.Art & crafts outdoor game.It is full box set of zip mini car.",
+		"img": "https://i.ibb.co/Bzdtpt1/babycar.jpg"
     },
     {
         "prodctName": "Mini Teddy",
         "price": 100,
-        "description": "lorem ipose hgjghguh uyuiyuiy uyuyiy",
-		"img": "https://i.ibb.co/qj2gZs8/puzzlebox.jpg"
+        "category": "Baby's doll",
+        "description": "One kind of sweet, cute, tiny teddy, which is soft,easy to carry for your junior kid. ",
+		"img": "https://i.ibb.co/2cWnpvT/Tiny-Teddy.jpg"
     },
     {
         "prodctName": "Puzzle Box",
-        "price": 100,
-        "description": "lorem ipose hgjghguh uyuiyuiy uyuyiy",
+        "price": 200,
+        "category": "Learning toys",
+        "description": "Learning games, which help build up mind.Full set box of word puzzle for match the word",
 		"img": "https://i.ibb.co/qj2gZs8/puzzlebox.jpg"
     },
     {
-        "prodctName": "Funscool Teddy",
+        "prodctName": "Junior Construction Car",
         "price": 100,
-        "description": "lorem ipose hgjghguh uyuiyuiy uyuyiy",
-		"img": "https://i.ibb.co/qj2gZs8/puzzlebox.jpg"
+        "description": "Outdoor game running with battery, It would be purchased by single piece or set of box",
+		"img": "https://i.ibb.co/288qpy0/kenny-timmer.jpg"
+    },
+    {
+        "prodctName": "Swing-Slide Building",
+        "price": 1000,
+        "category": "Building toys",
+        "description": "Outdoor game building set. One kind of learnng toys. Made by wooden.Speciality is group of children can play together.",
+		"img": "https://i.ibb.co/TqLLS88/toyimg1.jpg"
+    },
+    {
+        "prodctName": "Pink city doll",
+        "price": 800,
+        "category": "Baby's doll",
+        "description": "Full set of barbie and related toys. Outdoor Camping adventures vehicle will be get by this toys box ",
+		"img": "https://i.ibb.co/4T8FDzT/toyimg2.jpg"
+    },
+    {
+        "prodctName": "Orang Toy Blocks",
+        "price": 800,
+        "category": "Box set",
+        "description": "Full set of building block toys.Specially for 4-5 years kids. In this set varity type toys will be gettiing in one package.",
+		"img": "https://i.ibb.co/f1nZmGN/toyimg3.jpg"
     }
 ]
+
+
+
+https://i.ibb.co/Bzdtpt1/babycar.jpg
+https://i.ibb.co/288qpy0/kenny-timmer.jpg
+https://i.ibb.co/JsVQYw3/pinkdoll.jpg
+https://i.ibb.co/Kh5d8VZ/puzzlebox.jpg
+https://i.ibb.co/2cWnpvT/Tiny-Teddy.jpg
+https://i.ibb.co/z7C6gSd/toni-cuenca.jpg
+https://i.ibb.co/TqLLS88/toyimg1.jpg
+https://i.ibb.co/4T8FDzT/toyimg2.jpg
+https://i.ibb.co/f1nZmGN/toyimg3.jpg
+https://i.ibb.co/SQLWNBv/toyimg4.jpg

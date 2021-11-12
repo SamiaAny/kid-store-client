@@ -1,5 +1,7 @@
 import React from 'react';
-import banner from '../../../images/bg.jpg';
+import { Link } from 'react-router-dom';
+import banner from '../../../images/New folder/bg.jpg';
+import banner1 from '../../../images/New folder/shirota-yuri-p0hDztR46cw-unsplash.jpg';
 
 const Banner = () => {
     return (
@@ -8,21 +10,23 @@ const Banner = () => {
                 <div className="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    
                 </div>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img style={{ opacity: '0.7' }} src={banner} className="d-block w-100" alt="..." />
-                        <div className="carousel-caption d-none d-md-block text-dark">
-                            <h2>Second slide label</h2>
-                            <p>Some representative placeholder content for the second slide.</p>
+                        <img style={{ opacity: '0.7',height:'80vh' }} src={banner} className="d-block w-100" alt="..." />
+                        <div className="carousel-caption  d-md-block text-dark">
+                            <h2>Best Toy For Your Kid</h2>
+                            <p>Always stay here to choose best one for your little one.</p>
+                            {/* <Link to="/product"><button className="btn btn-dark">Explore More</button></Link> */}
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <img style={{ opacity: '0.7' }} src={banner} className="d-block w-100" alt="..." />
-                        <div className="carousel-caption d-none d-md-block text-dark">
-                            <h2>Second slide label</h2>
-                            <p>Some representative placeholder content for the second slide.</p>
+                        <img style={{ opacity: '0.7',height:'80vh' }} src={banner1} className="d-block w-100" alt="..." />
+                        <div className="carousel-caption d-md-block text-dark">
+                            <h2>The Widest Range of Toys</h2>
+                            <p>Always try to provide best qualitifull product.</p>
+                            {/* <Link to="/product"><button className="btn btn-dark">Explore More</button></Link> */}
                         </div>
                     </div>
                 </div>
