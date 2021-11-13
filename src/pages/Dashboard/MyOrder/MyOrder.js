@@ -50,10 +50,11 @@ const MyOrder = () => {
                 My Order
             </Typography>
             <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 300 }} aria-label="simple table">
+                <Table sx={{ minWidth: 400 }} aria-label="simple table">
                     <TableHead>
                         <TableRow>
                             <TableCell>Name</TableCell>
+                            <TableCell align="right">Email</TableCell>
                             <TableCell align="right">Address</TableCell>
                             <TableCell align="right">Phone</TableCell>
                             <TableCell align="right">Product</TableCell>
@@ -71,6 +72,7 @@ const MyOrder = () => {
                                 <TableCell component="th" scope="row">
                                     {row?.name}
                                 </TableCell>
+                                <TableCell align="right">{row?.email}</TableCell>
                                 <TableCell align="right">{row?.address}</TableCell>
                                 <TableCell align="right">{row?.phone}</TableCell>
                                 <TableCell align="right">{row?.productname}</TableCell>

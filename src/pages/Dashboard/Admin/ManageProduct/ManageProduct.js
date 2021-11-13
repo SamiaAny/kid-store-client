@@ -18,7 +18,7 @@ const ManageProduct = (props) => {
             method: 'DELETE'
         }).then(res => res.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
             const proceed = window.confirm('Are you sure to delete this product?');
             if(proceed) {
                 if(data.modifiedCount > 0) {

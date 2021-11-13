@@ -10,6 +10,7 @@ import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './pages/Dashboard/Dashboard';
 import NotFound from './pages/NotFound/NotFound';
 import ContactUs from './pages/ContactUs/ContactUs';
+import FAQpage from './pages/FAQpage/FAQpage';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
             </Route>
             <Route path="/contact">
               <ContactUs></ContactUs>
+            </Route>
+            <Route path="/faq">
+              <FAQpage></FAQpage>
             </Route>
             <PrivateRoute path="/booking/:productId">
               <PlaceOrder></PlaceOrder>

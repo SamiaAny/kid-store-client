@@ -4,81 +4,91 @@
         "price": 100,
         "category": "Baby's doll",
         "description": "Indoor games for child,speciality is tiny doll",
-		"img": "https://i.ibb.co/JsVQYw3/pinkdoll.jpg"
+        "img": "https://i.ibb.co/JsVQYw3/pinkdoll.jpg",
+        "features": "Made of High quality design and materials and warrenty for lasting drability. It measures 20-inches soft and huggable which encourages imaginative play.different colour should be available."
     },
     {
         "prodctName": "Baby Play Sets",
         "price": 300,
         "category": "Box set",
         "description": "Learning game, this toy is being helped for learning swimming.",
-		"img": "https://i.ibb.co/z7C6gSd/toni-cuenca.jpg"
+        "img": "https://i.ibb.co/z7C6gSd/toni-cuenca.jpg",
+        "features": "Lake, pool, beach - No matter where your little kid float, By this will help you to learning swim by playing this.It helps drifting off the Pool Float.Bright vibrant color. Perfect for pool, lake."
     },
     {
         "prodctName": "Toys Box for Babys",
         "price": 500,
         "category": "Box set",
         "description": "One kind of learning toys,specially for 3-4 years kids. Help for building mind of your kid",
-		"img": "https://i.ibb.co/SQLWNBv/toyimg4.jpg"
+        "img": "https://i.ibb.co/SQLWNBv/toyimg4.jpg",
+        "features": "By this toys getting brilliantly play-and-learn experience.Color matching ,puzzle cube, building blocks features add this more special for develop learning for children.Shape and color learning, build creativity enhance the mind of your little one."
     },
     {
         "prodctName": "Toys Zip Car",
         "price": 150,
         "category": "Castle toys",
         "description": "Bruder toys mini vehicle.Art & crafts outdoor game.It is full box set of zip mini car.",
-		"img": "https://i.ibb.co/Bzdtpt1/babycar.jpg"
+        "img": "https://i.ibb.co/Bzdtpt1/babycar.jpg",
+        "features":"Made with six screws and two drill bits, the mini zip car kind of Tractor which feel like imagination rolling. It includes power drill 2 drill bits 6 screws 7 tractor piecesRequires 2 AA batteries - Included High-quality materials and construction - Lasting durability"
     },
     {
         "prodctName": "Mini Teddy",
         "price": 100,
         "category": "Baby's doll",
         "description": "One kind of sweet, cute, tiny teddy, which is soft,easy to carry for your junior kid. ",
-		"img": "https://i.ibb.co/2cWnpvT/Tiny-Teddy.jpg"
+        "img": "https://i.ibb.co/2cWnpvT/Tiny-Teddy.jpg",
+        "features": "An organic, soft baby doll simply adorable! It is so soft and organic baby doll.It includes one 25-inch Kye rag doll.Full of plastic free sustainable toys.Manufacturing by Thiland."
     },
     {
         "prodctName": "Puzzle Box",
         "price": 200,
         "category": "Learning toys",
         "description": "Learning games, which help build up mind.Full set box of word puzzle for match the word",
-		"img": "https://i.ibb.co/qj2gZs8/puzzlebox.jpg"
+        "img": "https://i.ibb.co/qj2gZs8/puzzlebox.jpg",
+        "features": "provide high quality materials and wooden construction and also lasting durability.In this toys each cube attach the letter to build word puzzle.Which develop the mind.Includes 64 cubes each measures 1.5 X 1.5 X 1.5 inches."
     },
     {
         "prodctName": "Junior Construction Car",
         "price": 100,
-        "description": "Outdoor game running with battery, It would be purchased by single piece or set of box",
-		"img": "https://i.ibb.co/288qpy0/kenny-timmer.jpg"
+        "description": "Outdoor game running without battery, It would be purchased by single piece or set of box",
+        "img": "https://i.ibb.co/288qpy0/kenny-timmer.jpg",
+        "features": "First of all no battery required.It measures 10 X 7 X 10 inches.Push an roll system. Best quality and materials safe and durable.Chunky size."
     },
     {
         "prodctName": "Swing-Slide Building",
         "price": 1000,
         "category": "Building toys",
         "description": "Outdoor game building set. One kind of learnng toys. Made by wooden.Speciality is group of children can play together.",
-		"img": "https://i.ibb.co/TqLLS88/toyimg1.jpg"
+        "img": "https://i.ibb.co/TqLLS88/toyimg1.jpg",
+        "features": "Provide High quality design and materials for long lasting durability, exceptional playtime experience. Easily apart part by part and also fit back together.Encourage creativity.Play easily with many person. "
     },
     {
         "prodctName": "Pink city doll",
         "price": 800,
         "category": "Baby's doll",
         "description": "Full set of barbie and related toys. Outdoor Camping adventures vehicle will be get by this toys box ",
-		"img": "https://i.ibb.co/4T8FDzT/toyimg2.jpg"
+        "img": "https://i.ibb.co/4T8FDzT/toyimg2.jpg",
+        "features": "Detailed barbie playset full of accessories.Vibrant color Measures 25 x 15 x 11 inches.Getting lots of features. Encourages imaginative play, storytelling, creativity.High-quality materials and construction - Lasting durability"
     },
     {
         "prodctName": "Orang Toy Blocks",
         "price": 800,
         "category": "Box set",
         "description": "Full set of building block toys.Specially for 4-5 years kids. In this set varity type toys will be gettiing in one package.",
-		"img": "https://i.ibb.co/f1nZmGN/toyimg3.jpg"
+        "img": "https://i.ibb.co/f1nZmGN/toyimg3.jpg",
+        "features": "Provide High quality design and materials for long lasting durability.Cute orange color every toys of this box. Fun accessories include ball,mini animals, car, teddy bear etc."
     }
 ]
 
 
 
-https://i.ibb.co/Bzdtpt1/babycar.jpg
-https://i.ibb.co/288qpy0/kenny-timmer.jpg
-https://i.ibb.co/JsVQYw3/pinkdoll.jpg
-https://i.ibb.co/Kh5d8VZ/puzzlebox.jpg
-https://i.ibb.co/2cWnpvT/Tiny-Teddy.jpg
-https://i.ibb.co/z7C6gSd/toni-cuenca.jpg
-https://i.ibb.co/TqLLS88/toyimg1.jpg
-https://i.ibb.co/4T8FDzT/toyimg2.jpg
-https://i.ibb.co/f1nZmGN/toyimg3.jpg
-https://i.ibb.co/SQLWNBv/toyimg4.jpg
+https: //i.ibb.co/Bzdtpt1/babycar.jpg
+https: //i.ibb.co/288qpy0/kenny-timmer.jpg
+https: //i.ibb.co/JsVQYw3/pinkdoll.jpg
+https: //i.ibb.co/Kh5d8VZ/puzzlebox.jpg
+https: //i.ibb.co/2cWnpvT/Tiny-Teddy.jpg
+https: //i.ibb.co/z7C6gSd/toni-cuenca.jpg
+https: //i.ibb.co/TqLLS88/toyimg1.jpg
+https: //i.ibb.co/4T8FDzT/toyimg2.jpg
+https: //i.ibb.co/f1nZmGN/toyimg3.jpg
+https: //i.ibb.co/SQLWNBv/toyimg4.jpg

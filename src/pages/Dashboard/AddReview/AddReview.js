@@ -3,8 +3,11 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import useAuth from '../../../hooks/useAuth';
 import './AddReview.css';
+
+
 const AddReview = () => {
     const { user } = useAuth();
+    // const [loading,setLoading] = useState(false);
     const { register, handleSubmit,reset, formState: { errors } } = useForm();
 
     const onSubmit = data => {
@@ -17,7 +20,7 @@ const AddReview = () => {
             body: JSON.stringify(data)
         }).then(res => res.json())
         .then(result => {
-            console.log(result);
+            // console.log(result);
             if(result.insertedId) {
                 alert('Add review successfully');
                 reset();

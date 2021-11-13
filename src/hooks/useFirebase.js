@@ -17,7 +17,7 @@ const useFirebase = () => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                console.log(userCredential.user);
+                // console.log(userCredential.user);
                 const newUser = {displayName: name,email: email}
                 setUser(newUser);
                 setError('');
@@ -33,7 +33,7 @@ const useFirebase = () => {
                 history.replace('/'); 
             })
             .catch((error) => {
-                console.log(error.message);
+                // console.log(error.message);
                 setError(error.message);
             })
             .finally(() => setIsLoading(false))
@@ -46,18 +46,24 @@ const useFirebase = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in 
-                console.log(userCredential.user);
+                // console.log(userCredential.user);
                 setError('');
-                const uri = location?.state?.from || '/';
+                const uri = location?.state?.from || '/dashboard';
                 history.push(uri);
+               
                 // ...
             })
             .catch((error) => {
-                console.log(error.message);
+                // console.log(error.message);
                 setError(error.message);
             })
             .finally(() => setIsLoading(false))
     };
+
+    
+    
+
+    
 
     //set Observer state change
     useEffect(() => {
@@ -71,7 +77,7 @@ const useFirebase = () => {
             setIsLoading(false);
         });
         return () => unsubsceibed;
-    }, []);
+    }, [auth]);
 
     useEffect(()=>{
         fetch(`https://nameless-basin-78356.herokuapp.com/users/${user?.email}`)
@@ -102,6 +108,7 @@ const useFirebase = () => {
         signOut(auth).then(() => {
             // Sign-out successful.
             setUser({});
+            window.location.reload();
         }).catch((error) => {
             // An error happened.
         }).finally(() => setIsLoading(false))

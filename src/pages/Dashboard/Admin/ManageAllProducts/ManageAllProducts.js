@@ -15,7 +15,8 @@ const ManageAllProducts = () => {
                 // console.log(data);
                 setAllPorducts(data);
             });
-    }, [allProducts])
+    }, [allProducts]);
+    
     return (
         <Container>
             <Typography variant="h3" sx={{ fontWeight: 300, my: 3 }} component="div">

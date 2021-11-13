@@ -12,7 +12,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { NavLink } from 'react-router-dom';
-import { Button } from '@mui/material';
+import { Button, Divider } from '@mui/material';
 import useAuth from '../../hooks/useAuth';
 import MyOrder from './MyOrder/MyOrder';
 import ManageAllOrder from './Admin/ManageAllOrder/ManageAllOrder';
@@ -43,27 +43,45 @@ const Dashboard = (props) => {
         setMobileOpen(!mobileOpen);
     };
 
+    const navmenu = {
+        textDecoration: 'none',
+        color: 'grey ',
+        paddingBottom: '15px'
+    }
+
     const drawer = (
         <div>
             <Toolbar />
             <List sx={{ textAlign: 'left', ml: 2 }}>
-                <ListItemIcon>
-                    <AccountCircleIcon />
-                </ListItemIcon>
-                <ListItemText>{user?.displayName}</ListItemText>
+                <Box component="div" sx={{ml: 7,mb: 3}}>
+                    <ListItemIcon>
+                        <AccountCircleIcon sx={{ fontSize: '40px' }} />
+                    </ListItemIcon>
+                    <ListItemText>{user?.displayName}</ListItemText>
+
+                </Box>
+                <Divider/>
+                <NavLink style={navmenu} to={`${url}`}><Button variant="inherit">Dashboard</Button></NavLink><br />
                 {
+
                     admin ? <Box>
-                        <NavLink style={{ textDecoration: 'none' }} to={`${url}/manageorder`}>ManageAllOrder</NavLink><br />
-                        <NavLink style={{ textDecoration: 'none' }} to={`${url}/addproduct`}>Add Product</NavLink><br />
-                        <NavLink style={{ textDecoration: 'none' }} to={`${url}/makeadmin`}>Make Admin</NavLink><br />
-                        <NavLink style={{ textDecoration: 'none' }} to={`${url}/manageproduct`}>Manage All Products</NavLink><br />
+
+                        <NavLink style={navmenu} to={`${url}/manageorder`}><Button variant="inherit">ManageAllOrder</Button></NavLink><br />
+
+                        <NavLink style={navmenu} to={`${url}/addproduct`}><Button variant="inherit">Add Product</Button></NavLink><br />
+
+                        <NavLink style={navmenu} to={`${url}/makeadmin`}><Button variant="inherit">Make Admin</Button></NavLink><br />
+
+                        <NavLink style={navmenu} to={`${url}/manageproduct`}><Button variant="inherit">Manage Product</Button></NavLink><br />
                     </Box> : <Box>
-                        <NavLink style={{ textDecoration: 'none' }} to={`${url}/myorder`}>My Order</NavLink><br />
-                        <NavLink style={{ textDecoration: 'none' }} to={`${url}/review`}>Review</NavLink><br />
-                        <NavLink style={{ textDecoration: 'none' }} to={`${url}/pay`}>Pay</NavLink><br />
+                        <NavLink style={navmenu} to={`${url}/myorder`}><Button variant="inherit">My Order</Button></NavLink><br />
+
+                        <NavLink style={navmenu} to={`${url}/review`}><Button variant="inherit">Add Review</Button></NavLink><br />
+
+                        <NavLink style={navmenu} to={`${url}/pay`}><Button variant="inherit">Pay</Button></NavLink><br />
                     </Box>
                 }
-                <NavLink style={{ textDecoration: 'none' }} to="/home">Home</NavLink><br />
+                <NavLink style={navmenu} to="/home"><Button variant="inherit">Home</Button></NavLink><br />
                 <Button onClick={logOut} color="inherit">Logout</Button>
             </List>
         </div>
@@ -93,7 +111,7 @@ const Dashboard = (props) => {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        Kid Store Dashboard
+                        Kid Store {admin ? 'admin' : 'user'} Dashboard
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -148,9 +166,9 @@ const Dashboard = (props) => {
                     <Route path={`${path}/pay`}>
                         <Pay></Pay>
                     </Route>
-                    <Route path={`${path}/manageorder`}>
+                    <AdminRoute path={`${path}/manageorder`}>
                         <ManageAllOrder></ManageAllOrder>
-                    </Route>
+                    </AdminRoute>
                     <AdminRoute path={`${path}/addproduct`}>
                         <AddProduct></AddProduct>
                     </AdminRoute>

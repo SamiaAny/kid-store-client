@@ -4,6 +4,9 @@ import React from 'react';
 import contactimg from '../../../images/undraw_Traveling_re_weve.png';
 
 const Contact = () => {
+    const btnColor = {
+        backgroundColor: '#800080'
+    }
     return (
         <div style={{marginTop:'100px',marginBottom:'50px'}}>
             <Container sx={{ my: 8 }}>
@@ -21,7 +24,7 @@ const Contact = () => {
                                 margin="normal"
                                 fullWidth
                             />
-                            <Button sx={{ width: 1, mt: 1,backgroundColor:'purple' }} variant="contained">send message</Button>
+                            <Button sx={{ width: 1, mt: 1 }} variant="contained" style={btnColor}>send message</Button>
                         </Box>
                     </Grid>
                     <Grid item xs={12} sm={12} md={6}>

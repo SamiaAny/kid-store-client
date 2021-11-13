@@ -8,15 +8,13 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import MoreIcon from '@mui/icons-material/MoreVert';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Button } from '@mui/material';
 import useAuth from '../../../hooks/useAuth';
 
 
 const Header = () => {
     const { user, logOut } = useAuth();
-    const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
     const menubar = {
@@ -25,7 +23,6 @@ const Header = () => {
         TextDecoderation: 'none',
     };
 
-    const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
 
@@ -34,36 +31,10 @@ const Header = () => {
         setMobileMoreAnchorEl(null);
     };
 
-    const handleMenuClose = () => {
-        setAnchorEl(null);
-        handleMobileMenuClose();
-    };
 
     const handleMobileMenuOpen = (event) => {
         setMobileMoreAnchorEl(event.currentTarget);
     };
-
-    const menuId = 'primary-search-account-menu';
-    const renderMenu = (
-        <Menu
-            anchorEl={anchorEl}
-            anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-            }}
-            id={menuId}
-            keepMounted
-            transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-            }}
-            open={isMenuOpen}
-            onClose={handleMenuClose}
-        >
-            <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-            <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-        </Menu>
-    );
 
     const mobileMenuId = 'primary-search-account-menu-mobile';
     const renderMobileMenu = (
@@ -85,6 +56,7 @@ const Header = () => {
             <NavLink style={{textDecoration:'none', color: 'grey'}} to="/home"><MenuItem>Home</MenuItem></NavLink>
             <NavLink style={{textDecoration:'none', color: 'grey'}} to="/product"><MenuItem>Explore Product</MenuItem></NavLink>
             <NavLink style={{textDecoration:'none', color: 'grey'}} to="/contact"><MenuItem>Contact Us</MenuItem></NavLink>
+            <NavLink style={{textDecoration:'none', color: 'grey'}} to="/faq"><MenuItem>FAQ</MenuItem></NavLink>
             {user?.email ?
                 <Box>
                     <NavLink style={{textDecoration:'none', color: 'grey'}} to="/dashboard"><MenuItem>Dashboard</MenuItem></NavLink>
@@ -104,15 +76,6 @@ const Header = () => {
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" sx={{backgroundColor:'purple'}}>
                 <Toolbar>
-                    {/* <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="open drawer"
-                        sx={{ mr: 2 }}
-                    >
-                        <MenuIcon />
-                    </IconButton> */}
                     <Typography
                         variant="h6"
                         noWrap
@@ -128,6 +91,7 @@ const Header = () => {
                         <NavLink style={{ textDecoration: 'none', color: 'white', marginRight: '20px', marginTop: '4px' }} to="/home">Home</NavLink>
                         <NavLink style={{ textDecoration: 'none', color: 'white', marginRight: '20px', marginTop: '4px' }} to="/product">Explore Product</NavLink>
                         <NavLink style={{ textDecoration: 'none', color: 'white', marginRight: '20px', marginTop: '4px' }} to="/contact">Contact Us</NavLink>
+                        <NavLink style={{ textDecoration: 'none', color: 'white', marginRight: '20px', marginTop: '4px' }} to="/faq">FAQ</NavLink>
 
                         {user?.email ?
                             <>
@@ -160,7 +124,7 @@ const Header = () => {
                 </Toolbar>
             </AppBar>
             {renderMobileMenu}
-            {renderMenu}
+            {/* {renderMenu} */}
         </Box>
     );
 };

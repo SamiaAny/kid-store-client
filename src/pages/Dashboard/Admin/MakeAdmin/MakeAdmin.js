@@ -4,8 +4,9 @@ import { useForm } from "react-hook-form";
 
 const MakeAdmin = () => {
     const { register, handleSubmit,reset, formState: { errors } } = useForm();
+    
     const onSubmit = data => {
-        console.log(data);
+        // console.log(data);
         fetch('https://nameless-basin-78356.herokuapp.com/users/admin',{
             method: 'PUT',
             headers: {
@@ -14,7 +15,7 @@ const MakeAdmin = () => {
             body: JSON.stringify(data)
         }).then(res=>res.json())
             .then(result => {
-                console.log(result);
+                // console.log(result);
                 if(result.modifiedCount>0) {
                     alert('successfully make admin');
                     reset();

@@ -3,7 +3,6 @@ import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { useParams } from 'react-router';
-// import Navmenu from '../shared/Navmenu/Navmenu';
 import useAuth from '../../hooks/useAuth';
 import './PlaceOrder.css';
 import Header from '../shared/Header/Header';
@@ -43,7 +42,7 @@ const PlaceOrder = () => {
 
     const onSubmit = data => {
         data.status = "pending";
-        console.log(data);
+        // console.log(data);
         fetch('https://nameless-basin-78356.herokuapp.com/orders', {
             method: 'POST',
             headers: {
@@ -52,7 +51,7 @@ const PlaceOrder = () => {
             body: JSON.stringify(data)
         }).then(res => res.json())
         .then(result => {
-            console.log(result);
+            // console.log(result);
             if(result.insertedId) {
                 alert('Place your order successfully');
                 reset();
@@ -76,17 +75,20 @@ const PlaceOrder = () => {
                                         alt=""
                                     />
                                     <CardContent>
-                                        <Typography variant="h5" component="div">
+                                        <Typography variant="h4" sx={{fontWeight: 500, my:2}} component="div">
                                             {singleProduct?.prodctName}
                                         </Typography>
-                                        <Typography variant="body2">
-                                            {singleProduct?.description}
-                                        </Typography>
                                         {singleProduct?.category && 
-                                            <Typography variant="body2">
+                                            <Typography variant="h6">
                                               Category:{singleProduct?.category}
                                         </Typography>
                                         }
+                                        <Typography variant="body1">
+                                            {singleProduct?.description}
+                                        </Typography>
+                                        <Typography variant="body1">
+                                            {singleProduct?.features}
+                                        </Typography>
                                         <Typography variant="h5" component="div">
                                            Price: ${singleProduct?.price}
                                         </Typography>
@@ -113,7 +115,6 @@ const PlaceOrder = () => {
                                    
                                     <input placeholder="Address" {...register("address", { required: true })} /><br/>
 
-                                    {/* <input type="submit" /> */}
                                     <Button type="submit" sx={{m:2}} color="secondary" variant="outlined">Place Order</Button>
                                 </form>
                             </Grid>
